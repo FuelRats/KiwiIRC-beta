@@ -1,5 +1,5 @@
 {
-	"windowTitle": "Kiwi IRC - The web IRC client",
+	"windowTitle": "The Fuel Rats - using Kiwi IRC",
 	"startupScreen": "customServer",
 	"kiwiServer": "http://107.170.102.129/webirc/kiwiirc/",
 	"restricted": true,
@@ -8,12 +8,12 @@
 		{ "name": "Default", "url": "static/themes/default" }
 	],
 	"startupOptions" : {
-		"server": "irc.freenode.net",
-		"port": 6667,
-		"tls": false,
+		"server": "irc.fuelrats.com",
+		"port": 6697,
+		"tls": true,
 		"direct": false,
-		"channel": "#kiwiirc",
-		"nick": "kiwi-n?"
+		"channel": "#ratchat",
+		"nick": "rat_?"
 	},
 	"embedly": {
 		"key": ""
