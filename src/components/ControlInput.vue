@@ -26,7 +26,7 @@
                 </div>
                 <!--<button type="submit">Send</button>-->
             </form>
-            <div class="kiwi-controlinput-tools">
+            <div class="kiwi-controlinput-tools" ref="plugins">
                 <a @click.prevent="onToolClickTextStyle">
                     <i class="fa fa-adjust" aria-hidden="true"></i>
                 </a>
@@ -44,13 +44,11 @@
 import autocompleteCommands from 'src/res/autocompleteCommands';
 import state from 'src/libs/state';
 import AutoComplete from './AutoComplete';
-import IrcInput from './utils/IrcInput';
 import ToolTextStyle from './inputtools/TextStyle';
 
 export default {
     components: {
         AutoComplete,
-        IrcInput,
     },
     data: function data() {
         return {
@@ -80,6 +78,9 @@ export default {
         },
     },
     methods: {
+        addPlugin: function addPlugin(domEl) {
+            this.$refs.plugins.appendChild(domEl);
+        },
         onToolClickTextStyle: function onToolClickTextStyle() {
             this.toggleInputTool(ToolTextStyle);
         },
@@ -301,6 +302,9 @@ export default {
 
             this.$refs.input.focus();
         });
+    },
+    mounted: function mounted() {
+        state.$emit('controlinput:show', { controlinput: this });
     },
 };
 </script>

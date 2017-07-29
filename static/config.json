@@ -1,7 +1,7 @@
 {
 	"windowTitle": "The Fuel Rats - using Kiwi IRC",
 	"startupScreen": "customServer",
-	"kiwiServer": "http://107.170.102.129/webirc/kiwiirc/",
+	"kiwiServer": "https://localdev.clients.kiwiirc.com/webirc/kiwiirc/",
 	"restricted": true,
 	"theme": "default",
 	"themes": [
