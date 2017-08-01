@@ -6,21 +6,7 @@
         <transition name="connectingloader">
         <form v-if="!is_connecting" v-on:submit.prevent="startUp" class="u-form kiwi-customserver-form">
             <template v-if="server_type === 'default'">
-                <input-text :label="$t('server')" v-model="server">
-                    <span class="fa-stack fa-lg kiwi-customserver-tls" :class="[tls ? 'kiwi-customserver-tls--enabled' : '']" @click="tls=!tls">
-                        <i class="fa fa-lock fa-stack-1x kiwi-customserver-tls-lock"></i>
-                        <i v-if="!tls" class="fa fa-times fa-stack-1x kiwi-customserver-tls-minus"></i>
-                    </span>
-                </input-text>
-
-                <input-text :label="$t('nick')" v-model="nick" />
-
-                <label class="kiwi-customserver-have-password">
-                    <input type="checkbox" v-model="show_password_box" /> {{$t('password_have')}}
-                </label>
-                <input-text v-if="show_password_box" :label="$t('password')" v-model="password" type="password" />
-
-                <input-text :label="$t('channel')" v-model="channel" />
+                <input-text :label="$t('CMDR Name')" v-model="nick" />
             </template>
 
             <template v-if="server_type === 'default_simple'">
@@ -72,7 +58,7 @@ import * as Misc from 'src/helpers/Misc';
 export default {
     data: function data() {
         return {
-            title: 'Where are you connecting today?',
+            title: 'Please enter your details below...',
             server_type: 'default',
             server: '',
             tls: false,
@@ -81,9 +67,9 @@ export default {
             encoding: 'utf8',
             channel: '',
             znc_network: '',
-            znc_network_support: true,
+            znc_network_support: false,
             direct: false,
-            show_type_switcher: true,
+            show_type_switcher: false,
             show_password_box: false,
             is_connecting: false,
             connecting_net: null,
